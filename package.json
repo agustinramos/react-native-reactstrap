@@ -1,0 +1,32 @@
+{
+  "name": "react-native-reactstrap",
+  "version": "1.0.0",
+  "description": "react-native-reactstrap",
+  "main": "lib/index.tsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "typescript": "^2.9.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinramos/react-native-reactstrap.git"
+  },
+  "keywords": [
+    "react-native",
+    "bootstrap",
+    "react-native-reactstrap"
+  ],
+  "files:": [
+    "LICENSE",
+    "README.md",
+    "lib"
+  ],
+  "author": "Agustin Ramos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agustinramos/react-native-reactstrap/issues"
+  },
+  "homepage": "https://github.com/agustinramos/react-native-reactstrap#readme"
+}
