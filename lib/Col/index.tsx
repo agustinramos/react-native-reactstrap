@@ -1,15 +1,17 @@
 import React, { ReactNode } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, ViewStyle, StyleSheet } from 'react-native'
 
 type Props = {
   children: ReactNode
+  style?: ViewStyle
   size?: number
   offset?: number
 }
 
 const styles = StyleSheet.create({
   col: {
-    paddingHorizontal: 3
+    paddingHorizontal: 3,
+    alignItems: 'center'
   }
 })
 
@@ -31,7 +33,8 @@ export default class Col extends React.Component<Props> {
             marginLeft: this.props.offset
               ? calculatePorcentual(this.props.offset)
               : 0
-          }
+          },
+          this.props.style
         ]}
       >
         {this.props.children}

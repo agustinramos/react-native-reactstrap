@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react'
-import { View, StyleSheet } from 'react-native'
+import { View, ViewStyle, StyleSheet } from 'react-native'
 
 type Props = {
   children: ReactNode
+  style?: ViewStyle
   flexDirection?: string
   justifyContent?: string
 }
@@ -27,13 +28,12 @@ export default class Row extends React.Component<Props> {
           {
             flexDirection: this.props.flexDirection
               ? this.props.flexDirection
-              : styles.row.flexDirection
-          },
-          {
+              : styles.row.flexDirection,
             justifyContent: this.props.justifyContent
               ? this.props.justifyContent
               : styles.row.justifyContent
-          }
+          },
+          this.props.style
         ]}
       >
         {this.props.children}
