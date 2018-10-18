@@ -1,10 +1,13 @@
 {
   "name": "react-native-reactstrap",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "react-native-reactstrap",
   "main": "lib/index.tsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "hex-to-rgba": "^1.0.2"
   },
   "devDependencies": {
     "typescript": "^2.9.2"

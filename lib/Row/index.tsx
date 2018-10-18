@@ -1,43 +1,34 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, Component } from 'react'
 import { View, ViewStyle, StyleSheet } from 'react-native'
+
+// type FlexDirection = 'row' | 'column'
+// type JustifyContent = 'center' | 'space-between'
 
 type Props = {
   children: ReactNode
   style?: ViewStyle
-  flexDirection?: string
-  justifyContent?: string
 }
 
 const styles = StyleSheet.create({
   row: {
     display: 'flex',
     width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     paddingHorizontal: 10,
-    marginVertical: 7
+    marginVertical: 7,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    flexWrap: 'nowrap'
   }
 })
 
-export default class Row extends React.Component<Props> {
+class Row extends Component<Props> {
+  static defaultProps = {}
+
   render() {
     return (
-      <View
-        style={[
-          styles.row,
-          {
-            flexDirection: this.props.flexDirection
-              ? this.props.flexDirection
-              : styles.row.flexDirection,
-            justifyContent: this.props.justifyContent
-              ? this.props.justifyContent
-              : styles.row.justifyContent
-          },
-          this.props.style
-        ]}
-      >
-        {this.props.children}
-      </View>
+      <View style={[styles.row, this.props.style]}>{this.props.children}</View>
     )
   }
 }
+
+export default Row

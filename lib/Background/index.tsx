@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { Component, ReactNode } from 'react'
 import {
   ImageBackground,
   View,
@@ -13,13 +13,12 @@ const height = Dimensions.get('window').height
 
 type Props = {
   style?: ViewStyle
-  image: ImageSourcePropType
+  source: ImageSourcePropType
   children: ReactNode
 }
 
 const styles = StyleSheet.create({
   overlay: {
-    // backgroundColor: colors.primaryBackgroundOverlay,
     width,
     height
   },
@@ -29,11 +28,13 @@ const styles = StyleSheet.create({
   }
 })
 
-export default class Background extends React.Component<Props> {
+export default class Background extends Component<Props> {
+  static defaultProps = {}
+
   render() {
     return (
       <ImageBackground
-        source={this.props.image}
+        source={this.props.source}
         style={styles.background}
         resizeMode={'cover'}
       >

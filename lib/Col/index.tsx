@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { View, ViewStyle, StyleSheet } from 'react-native'
 
 type Props = {
-  children: ReactNode
+  children?: ReactNode
   style?: ViewStyle
   size?: number
   offset?: number
@@ -21,6 +21,8 @@ function calculatePorcentual(v) {
 }
 
 export default class Col extends React.Component<Props> {
+  static defaultProps = {}
+
   render() {
     return (
       <View
