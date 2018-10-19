@@ -1,12 +1,9 @@
 import React, { ReactNode, Component } from 'react'
 import { View, ViewStyle, StyleSheet } from 'react-native'
 
-// type FlexDirection = 'row' | 'column'
-// type JustifyContent = 'center' | 'space-between'
-
 type Props = {
   children: ReactNode
-  style?: ViewStyle
+  style?: ViewStyle | ViewStyle[]
 }
 
 const styles = StyleSheet.create({
@@ -16,7 +13,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginVertical: 7,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     flexWrap: 'nowrap'
   }
 })

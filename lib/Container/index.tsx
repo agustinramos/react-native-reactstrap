@@ -3,7 +3,8 @@ import { View, StyleSheet, ViewStyle } from 'react-native'
 
 type Props = {
   children: ReactNode
-  style?: ViewStyle
+  style?: ViewStyle | ViewStyle[]
+  bottomTab?: boolean
 }
 
 const styles = StyleSheet.create({
@@ -16,11 +17,17 @@ const styles = StyleSheet.create({
 })
 
 export default class Container extends React.Component<Props> {
-  static defaultProps = {}
+  static defaultProps = { bottomTab: false }
 
   render() {
     return (
-      <View style={[styles.container, this.props.style]}>
+      <View
+        style={[
+          styles.container,
+          { marginBottom: this.props.bottomTab ? 200 : 0 },
+          this.props.style
+        ]}
+      >
         {this.props.children}
       </View>
     )

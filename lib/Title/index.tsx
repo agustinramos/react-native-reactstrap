@@ -31,7 +31,7 @@ class Title extends Component<Props> {
       <Row
         style={{ backgroundColor: hexToRgba(this.props.backgroundColor, 0.7) }}
       >
-        <Col size={8}>
+        <Col size={8} offset={2}>
           <Row style={{ alignItems: 'center' }}>
             {this.props.icon && (
               <Col size={3}>
