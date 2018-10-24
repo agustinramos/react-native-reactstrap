@@ -5,6 +5,7 @@ type Props = {
   children: ReactNode
   style?: ViewStyle | ViewStyle[]
   bottomTab?: boolean
+  drawBehind?: boolean
 }
 
 const styles = StyleSheet.create({
@@ -17,14 +18,15 @@ const styles = StyleSheet.create({
 })
 
 export default class Container extends React.Component<Props> {
-  static defaultProps = { bottomTab: false }
+  static defaultProps = { bottomTab: false, drawBehind: false }
 
   render() {
     return (
       <View
         style={[
           styles.container,
-          { marginBottom: this.props.bottomTab ? 200 : 0 },
+          { marginBottom: this.props.bottomTab ? 180 : 0 },
+          { marginTop: this.props.drawBehind ? 60 : 0 },
           this.props.style
         ]}
       >

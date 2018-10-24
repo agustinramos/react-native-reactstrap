@@ -1,6 +1,6 @@
 {
   "name": "react-native-reactstrap",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "react-native-reactstrap",
   "main": "lib/index.tsx",
   "scripts": {

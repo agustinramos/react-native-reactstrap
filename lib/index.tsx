@@ -7,6 +7,7 @@ import Title from './Title'
 import Content from './Content'
 import DataList from './DataList'
 import Loader from './Loader'
+import TopBar from './TopBar'
 
 export {
   Container,
@@ -17,5 +18,6 @@ export {
   Title,
   Content,
   DataList,
-  Loader
+  Loader,
+  TopBar
 }

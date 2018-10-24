@@ -11,7 +11,8 @@ type Props = {
 const styles = StyleSheet.create({
   col: {
     paddingHorizontal: 3,
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'transparent'
   }
 })
 

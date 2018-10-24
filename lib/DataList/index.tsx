@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { StyleSheet, ViewStyle, View } from 'react-native'
+import {
+  StyleSheet,
+  ViewStyle,
+  View,
+  ScrollView,
+  RefreshControl
+} from 'react-native'
 import Row from '../Row'
 import Col from '../Col'
 
@@ -10,6 +16,8 @@ type Props = {
   dataSource: Array<object>
   renderRow: Function
   oddColor?: string
+  fetching: boolean
+  _onRefresh: () => {}
 }
 
 const styles = StyleSheet.create({})
@@ -19,6 +27,7 @@ class DataList extends Component<Props> {
     super(props)
 
     this.state = {}
+    this._renderComponent = this._renderComponent.bind(this)
   }
 
   static defaultProps = {
@@ -27,7 +36,7 @@ class DataList extends Component<Props> {
     oddColor: 'grey'
   }
 
-  render() {
+  _renderComponent() {
     return (
       <View style={[{ marginVertical: 7 }, this.props.containerStyle]}>
         {this.props.dataSource.map((value, index) => (
@@ -49,6 +58,25 @@ class DataList extends Component<Props> {
         ))}
       </View>
     )
+  }
+
+  render() {
+    if (this.props.fetching && this.props._onRefresh) {
+      return (
+        <ScrollView
+          refreshControl={
+            <RefreshControl
+              refreshing={this.props.fetching}
+              onRefresh={this.props._onRefresh}
+            />
+          }
+        >
+          {this._renderComponent()}
+        </ScrollView>
+      )
+    } else {
+      return this._renderComponent()
+    }
   }
 }
 
